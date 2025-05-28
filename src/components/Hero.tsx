@@ -11,7 +11,7 @@ const Hero: React.FC = () => {
         <div className="max-w-3xl">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
             <span className="block">Hello, I'm</span>
-            <span className="block text-primary dark:text-primary-foreground">Om Tita</span>
+            <span className="block text-primary">Om Tita</span>
           </h1>
 
           <h2 className="text-2xl md:text-3xl font-medium text-muted-foreground mb-8">
