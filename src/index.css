@@ -60,3 +60,25 @@ body {
   --chart-4: 280 65% 60%;
   --chart-5: 340 75% 55%;
 }
+
+.cursor-glow-enabled {
+  cursor: none;
+}
+
+.cursor-glow-enabled * {
+  cursor: none;
+}
+
+@media (max-width: 768px) {
+  .cursor-glow-enabled {
+    cursor: default !important;
+  }
+  
+  .cursor-glow-enabled * {
+    cursor: default !important;
+  }
+  
+  .cursor-glow {
+    display: none !important;
+  }
+}

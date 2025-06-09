@@ -43,6 +43,20 @@ const Experience: React.FC = () => {
     }
   ];
 
+  // Theme-aware color mapping for different technologies
+  const getTechColor = (tech: string) => {
+    const techColors: { [key: string]: string } = {
+      'Python': 'bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20 hover:bg-blue-500/20',
+      'Django': 'bg-green-500/10 text-green-600 dark:text-green-400 border-green-500/20 hover:bg-green-500/20',
+      'ReactJs': 'bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border-cyan-500/20 hover:bg-cyan-500/20',
+      'NodeJs': 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20 hover:bg-emerald-500/20',
+      'Flask': 'bg-slate-500/10 text-slate-600 dark:text-slate-400 border-slate-500/20 hover:bg-slate-500/20',
+      'MongoDB': 'bg-green-500/10 text-green-600 dark:text-green-400 border-green-500/20 hover:bg-green-500/20'
+    };
+    
+    return techColors[tech] || 'bg-purple-500/10 text-purple-600 dark:text-purple-400 border-purple-500/20 hover:bg-purple-500/20';
+  };
+
   return (
     <section id="experience" className="py-20 bg-card/30">
       <div className="container mx-auto px-4 md:px-8">
@@ -88,12 +102,12 @@ const Experience: React.FC = () => {
                       </div>
                     </div>
 
-                    {/* Tech stack badges */}
+                    {/* Tech stack badges with colors */}
                     <div className="flex flex-wrap gap-2 mb-5">
                       {exp.tech.split(', ').map((tech) => (
                         <span
                           key={`${exp.id}-${tech}`}
-                          className="bg-secondary text-secondary-foreground text-xs py-1 px-2 rounded"
+                          className={`text-xs py-1.5 px-3 rounded-full border font-medium transition-all duration-200 ${getTechColor(tech)}`}
                         >
                           {tech}
                         </span>
