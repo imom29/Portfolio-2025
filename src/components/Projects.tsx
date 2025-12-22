@@ -26,8 +26,6 @@ const Projects: React.FC = () => {
         "AI-powered code assistance",
         "Multi-file support"
       ],
-      demoLink: "https://code-collab-hazel.vercel.app/",
-      codeLink: "https://github.com/imom29/CodeCollab",
     },
     {
       id: 3,

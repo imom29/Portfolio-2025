@@ -10,21 +10,17 @@ import {
   SiFastapi,
   SiFigma,
   SiFlask,
-  SiFramer,
   SiGit,
   SiGithubactions,
-  SiGreensock,
   SiJavascript,
   SiMongodb,
   SiMysql,
-  SiNestjs,
   SiNextdotjs,
   SiNodedotjs,
   SiPostgresql,
   SiPrisma,
   SiReact,
   SiRedux,
-  SiSass,
   SiTailwindcss,
   SiTypescript,
 } from "react-icons/si";
@@ -49,10 +45,7 @@ const Skills: React.FC = () => {
         { name: "Next.js", Icon: SiNextdotjs },
         { name: "Redux", Icon: SiRedux },
         { name: "Tailwind CSS", Icon: SiTailwindcss },
-        { name: "GSAP", Icon: SiGreensock },
-        { name: "Framer Motion", Icon: SiFramer },
         { name: "Figma", Icon: SiFigma },
-        { name: "Sass", Icon: SiSass },
         { name: "Bootstrap", Icon: SiBootstrap },
       ],
     },
@@ -61,11 +54,10 @@ const Skills: React.FC = () => {
       name: "Backend",
       icon: "🛠️",
       items: [
-        { name: "Node.js", Icon: SiNodedotjs },
-        { name: "NestJS", Icon: SiNestjs },
-        { name: "Express.js", Icon: SiExpress },
         { name: "Django", Icon: SiDjango },
         { name: "FastAPI", Icon: SiFastapi },
+        { name: "Node.js", Icon: SiNodedotjs },
+        { name: "Express.js", Icon: SiExpress },
         { name: "Flask", Icon: SiFlask },
       ],
     },
@@ -107,9 +99,6 @@ const Skills: React.FC = () => {
             My stack
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">Tools I build with daily</h2>
-          <p className="text-muted-foreground max-w-2xl">
-            Frontend polish, backend APIs, data stores, and delivery tooling—organized by where they fit.
-          </p>
         </motion.div>
 
         <div className="space-y-8">
