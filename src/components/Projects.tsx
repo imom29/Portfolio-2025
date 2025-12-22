@@ -2,7 +2,15 @@ import type React from "react";
 import { motion } from "framer-motion";
 
 const Projects: React.FC = () => {
-  const projects = [
+  const projects: {
+    id: number;
+    title: string;
+    description: string;
+    technologies: string[];
+    features: string[];
+    demoLink?: string;
+    codeLink?: string;
+  }[] = [
     {
       id: 1,
       title: "Init AI",
