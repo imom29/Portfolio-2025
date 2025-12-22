@@ -1,35 +1,6 @@
 import type React from "react";
-import { useState } from "react";
 
 const Contact: React.FC = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitMessage, setSubmitMessage] = useState("");
-  const [submitStatus, setSubmitStatus] = useState<"success" | "error" | null>(null);
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitStatus("success");
-      setSubmitMessage("Thank you for your message! I'll get back to you soon.");
-      setFormData({ name: "", email: "", message: "" });
-    }, 1500);
-  };
-
   return (
     <section id="contact" className="py-20">
       <div className="container mx-auto px-4 md:px-8">
@@ -86,7 +57,7 @@ const Contact: React.FC = () => {
 
             <div className="mt-8 flex gap-4">
               <a
-                href="https://github.com"
+                href="https://github.com/imom29"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-secondary rounded-full hover:bg-secondary/70 transition-colors"
@@ -108,7 +79,7 @@ const Contact: React.FC = () => {
                 </svg>
               </a>
               <a
-                href="https://leetcode.com"
+                href="https://leetcode.com/u/omtita971/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-secondary rounded-full hover:bg-secondary/70 transition-colors"
@@ -122,12 +93,20 @@ const Contact: React.FC = () => {
           </div>
 
           <div>
-            <form onSubmit={handleSubmit} className="bg-card p-6 md:p-8 rounded-xl border border-border shadow-sm">
-              {submitStatus && (
-                <div className={`mb-6 p-4 rounded-lg ${submitStatus === "success" ? "bg-green-100 text-green-800 dark:bg-green-950 dark:text-green-300" : "bg-red-100 text-red-800 dark:bg-red-950 dark:text-red-300"}`}>
-                  {submitMessage}
-                </div>
-              )}
+            <form
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+              action="/thanks"
+              className="bg-card p-6 md:p-8 rounded-xl border border-border shadow-sm"
+            >
+              <input type="hidden" name="form-name" value="contact" />
+              <div className="hidden">
+                <label>
+                  Don’t fill this out: <input name="bot-field" />
+                </label>
+              </div>
 
               <div className="mb-6">
                 <label htmlFor="name" className="block mb-2 font-medium">Name</label>
@@ -135,8 +114,6 @@ const Contact: React.FC = () => {
                   type="text"
                   id="name"
                   name="name"
-                  value={formData.name}
-                  onChange={handleChange}
                   required
                   className="w-full p-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary/50 outline-none"
                   placeholder="Your name"
@@ -149,8 +126,6 @@ const Contact: React.FC = () => {
                   type="email"
                   id="email"
                   name="email"
-                  value={formData.email}
-                  onChange={handleChange}
                   required
                   className="w-full p-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary/50 outline-none"
                   placeholder="Your email"
@@ -162,8 +137,6 @@ const Contact: React.FC = () => {
                 <textarea
                   id="message"
                   name="message"
-                  value={formData.message}
-                  onChange={handleChange}
                   required
                   rows={5}
                   className="w-full p-3 bg-background border border-border rounded-lg focus:ring-2 focus:ring-primary/50 outline-none resize-none"
@@ -173,10 +146,9 @@ const Contact: React.FC = () => {
 
               <button
                 type="submit"
-                disabled={isSubmitting}
                 className="w-full px-6 py-3 bg-primary text-primary-foreground font-medium rounded-lg hover:bg-primary/90 transition-colors disabled:opacity-70"
               >
-                {isSubmitting ? "Sending..." : "Send Message"}
+                Send Message
               </button>
             </form>
           </div>

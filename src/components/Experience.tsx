@@ -43,20 +43,6 @@ const Experience: React.FC = () => {
     }
   ];
 
-  // Theme-aware color mapping for different technologies
-  const getTechColor = (tech: string) => {
-    const techColors: { [key: string]: string } = {
-      'Python': 'bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20 hover:bg-blue-500/20',
-      'Django': 'bg-green-500/10 text-green-600 dark:text-green-400 border-green-500/20 hover:bg-green-500/20',
-      'ReactJs': 'bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border-cyan-500/20 hover:bg-cyan-500/20',
-      'NodeJs': 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20 hover:bg-emerald-500/20',
-      'Flask': 'bg-slate-500/10 text-slate-600 dark:text-slate-400 border-slate-500/20 hover:bg-slate-500/20',
-      'MongoDB': 'bg-green-500/10 text-green-600 dark:text-green-400 border-green-500/20 hover:bg-green-500/20'
-    };
-    
-    return techColors[tech] || 'bg-purple-500/10 text-purple-600 dark:text-purple-400 border-purple-500/20 hover:bg-purple-500/20';
-  };
-
   return (
     <section id="experience" className="py-20 bg-card/30">
       <div className="container mx-auto px-4 md:px-8">
@@ -67,7 +53,7 @@ const Experience: React.FC = () => {
 
         <div className="relative max-w-5xl mx-auto">
           {/* Vertical timeline line */}
-          <div className="absolute left-0 md:left-6 top-0 h-full w-1 bg-gradient-to-b from-primary via-primary/70 to-primary/30" />
+          <div className="absolute left-0 md:left-6 top-0 h-full w-1 bg-border" />
 
           {/* Timeline items */}
           <div className="space-y-12">
@@ -75,24 +61,23 @@ const Experience: React.FC = () => {
               <div key={exp.id} className="relative group">
                 {/* Timeline dot with pulsing effect */}
                 <div className="absolute left-0 md:left-6 top-0 transform -translate-x-1/2 z-10">
-                  <div className="w-5 h-5 rounded-full bg-primary border-4 border-background shadow-lg" />
-                  <div className="w-5 h-5 rounded-full bg-primary/50 absolute top-0 left-0 animate-ping" style={{ animationDuration: '3s' }} />
+                  <div className="w-5 h-5 rounded-full bg-border border-4 border-background shadow-lg" />
                 </div>
 
                 {/* Content card - full width with left padding */}
-                <div className="ml-6 md:ml-14 dark:border-primary border rounded">
+                <div className="ml-6 md:ml-14 border rounded border-border/60">
                   <div className="bg-card border border-border/40 rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 relative light:group-hover:translate-y-[-2px]">
                     {/* Top header with company and period */}
                     <div className="flex flex-col sm:flex-row sm:items-center gap-2 mb-4 justify-between">
                       <h3 className="text-xl font-bold">{exp.company}</h3>
-                      <span className="bg-primary/10 text-primary py-1 px-3 rounded-full text-sm font-medium inline-block">
+                      <span className="bg-background text-muted-foreground border border-border/70 py-1 px-3 rounded-full text-sm font-medium inline-block">
                         {exp.period}
                       </span>
                     </div>
 
                     {/* Position & Location */}
                     <div className="mb-4">
-                      <h4 className="text-lg font-semibold text-primary">{exp.position}</h4>
+                      <h4 className="text-lg font-semibold text-foreground">{exp.position}</h4>
                       <div className="flex items-center gap-2 text-muted-foreground text-sm mt-1">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
@@ -107,7 +92,7 @@ const Experience: React.FC = () => {
                       {exp.tech.split(', ').map((tech) => (
                         <span
                           key={`${exp.id}-${tech}`}
-                          className={`text-xs py-1.5 px-3 rounded-full border font-medium transition-all duration-200 ${getTechColor(tech)}`}
+                          className="text-xs py-1.5 px-3 rounded-full border border-border/70 bg-background text-muted-foreground font-medium transition-all duration-200"
                         >
                           {tech}
                         </span>

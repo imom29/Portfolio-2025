@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Space+Grotesk:wght@600&display=swap"
+    rel="stylesheet"
+  >
+  <title>Thanks</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #0b0c10;
+      --card: #11131a;
+      --text: #f8f9fb;
+      --muted: #9aa2b5;
+      --accent: #7c3aed;
+      --border: #1f2330;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at 20% 20%, rgba(124,58,237,0.08), transparent 35%),
+                  radial-gradient(circle at 80% 0%, rgba(59,130,246,0.08), transparent 30%),
+                  var(--bg);
+      color: var(--text);
+      font-family: 'Inter', Arial, sans-serif;
+      padding: 24px;
+    }
+    .card {
+      width: min(520px, 100%);
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 28px 24px;
+      box-shadow: 0 18px 60px -28px rgba(0, 0, 0, 0.55);
+      text-align: center;
+    }
+    h1 {
+      margin: 0 0 12px;
+      font-family: 'Space Grotesk', 'Inter', Arial, sans-serif;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+    p {
+      margin: 0 0 24px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    a.button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 18px;
+      border-radius: 10px;
+      border: 1px solid rgba(124,58,237,0.35);
+      background: var(--accent);
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 150ms ease, box-shadow 150ms ease, background 150ms ease;
+      box-shadow: 0 8px 28px -12px rgba(124,58,237,0.55);
+    }
+    a.button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 34px -14px rgba(124,58,237,0.7);
+      background: #6d28d9;
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>Thanks for reaching out!</h1>
+    <p>I received your message. I’ll review it and get back to you soon.</p>
+    <a class="button" href="/">Back to home</a>
+  </main>
+</body>
+</html>
+

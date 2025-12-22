@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
 
           <div className="flex gap-4">
             <a
-              href="https://github.com"
+              href="https://github.com/imom29"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 hover:text-primary transition-colors"
@@ -50,7 +50,7 @@ const Footer: React.FC = () => {
               </svg>
             </a>
             <a
-              href="https://leetcode.com"
+              href="https://leetcode.com/u/omtita971/"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 hover:text-primary transition-colors"

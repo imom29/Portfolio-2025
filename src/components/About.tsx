@@ -57,7 +57,7 @@ const About: React.FC = () => {
 
           <div className="order-1 md:order-2 flex justify-center">
             <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden bg-gradient-to-br from-primary/20 to-secondary/30 flex items-center justify-center">
-              <img src="/public/assets/image-dark.png" alt="" />
+              <img src="assets/image-dark.png" alt="" />
             </div>
           </div>
         </div>
