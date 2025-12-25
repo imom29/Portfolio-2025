@@ -18,6 +18,7 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
           <a href="#experience" className="hover:text-primary transition-colors">Experience</a>
           <a href="#projects" className="hover:text-primary transition-colors">Projects</a>
           <a href="#skills" className="hover:text-primary transition-colors">Skills</a>
+          <a href="#blogs" className="hover:text-primary transition-colors">Blogs</a>
           <a href="#contact" className="hover:text-primary transition-colors">Contact</a>
         </nav>
 
