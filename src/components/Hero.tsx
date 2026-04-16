@@ -1,5 +1,6 @@
 import type React from "react";
 import { motion } from "framer-motion";
+import AnimatedGradient from "./AnimatedGradient";
 import {
   SiPython,
   SiDjango,
@@ -48,23 +49,13 @@ const Hero: React.FC = () => {
 
   return (
     <section id="home" className="relative py-20 md:py-32 overflow-hidden min-h-screen flex items-center">
-      {/* Animated Background Gradient */}
-      <motion.div
-        className="absolute inset-0 z-0"
-        animate={{
-          background: [
-            "linear-gradient(45deg, hsl(var(--primary)/0.05), hsl(var(--secondary)/0.15))",
-            "linear-gradient(90deg, hsl(var(--secondary)/0.08), hsl(var(--primary)/0.12))",
-            "linear-gradient(135deg, hsl(var(--primary)/0.06), hsl(var(--secondary)/0.18))",
-            "linear-gradient(45deg, hsl(var(--primary)/0.05), hsl(var(--secondary)/0.15))",
-          ],
-        }}
-        transition={{
-          duration: 15,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
+      {/* Animated WebGL Gradient Background */}
+      <div className="absolute inset-0 opacity-50 pointer-events-none">
+        <AnimatedGradient
+          config={{ preset: "Aurora" }}
+          noise={{ opacity: 0.15, scale: 1 }}
+        />
+      </div>
 
       {/* Floating Particles */}
       {particles.map((particle) => (

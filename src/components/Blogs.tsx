@@ -91,7 +91,7 @@ const Blogs: React.FC = () => {
 
   if (loading) {
     return (
-      <section id="blogs" className="py-20 bg-gradient-to-b from-muted/20 via-background to-background dark:from-background dark:via-background dark:to-muted/10">
+      <section id="blogs" className="py-20 bg-transparent">
         <div className="container mx-auto px-4 md:px-8 space-y-12">
           <div className="text-center">
             <div className="animate-pulse">
@@ -123,7 +123,7 @@ const Blogs: React.FC = () => {
 
   if (error) {
     return (
-      <section id="blogs" className="py-20 bg-gradient-to-b from-muted/20 via-background to-background dark:from-background dark:via-background dark:to-muted/10">
+      <section id="blogs" className="py-20 bg-transparent">
         <div className="container mx-auto px-4 md:px-8 text-center">
           <div className="text-red-500 mb-4">Failed to load blogs: {error}</div>
           <button 
@@ -138,7 +138,7 @@ const Blogs: React.FC = () => {
   }
 
   return (
-    <section id="blogs" className="py-20 bg-gradient-to-b from-muted/20 via-background to-background dark:from-background dark:via-background dark:to-muted/10">
+    <section id="blogs" className="py-20 bg-transparent">
       <div className="container mx-auto px-4 md:px-8 space-y-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

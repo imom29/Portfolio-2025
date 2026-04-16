@@ -62,7 +62,7 @@ const Projects: React.FC = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-gradient-to-b from-background via-background to-muted/20 dark:to-background">
+    <section id="projects" className="py-20 bg-transparent">
       <div className="container mx-auto px-4 md:px-8 space-y-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
